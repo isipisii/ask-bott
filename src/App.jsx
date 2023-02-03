@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { Configuration, OpenAIApi } from 'openai';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { DarkModeSwitch } from 'react-toggle-dark-mode';
+import { Configuration, OpenAIApi } from 'openai'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import { DarkModeSwitch } from 'react-toggle-dark-mode'
 
-import Button from './components/Button';
-import Input from './components/Input';
-import Result from './components/Result';
-import './App.css';
+import Button from './components/Button'
+import Input from './components/Input'
+import Result from './components/Result'
+import './App.css'
 
 
 const App = () => {
@@ -75,13 +75,13 @@ const App = () => {
 
 function handleOnKeyDown(e) {
   if (e.key === "Enter" && !e.shiftKey) { // will automatically send the message by hitting the enter
-      e.preventDefault();
+      e.preventDefault()
       if (e.target.value.trim() !== "") {
-          handleClick();
+          handleClick()
       }
   } else if (e.key === "Enter" && e.shiftKey) { // will add another line in textarea
-      e.preventDefault();
-      setMessage(prevMessage => prevMessage + "\n");
+      e.preventDefault()
+      setMessage(prevMessage => prevMessage + "\n")
   }
 }
 
@@ -93,7 +93,7 @@ useEffect(() => { //for typewrite animation
   }, 20)
   return () => {
     clearInterval(intervalId)
-  };
+  }
 }, [result])
 
 
